@@ -1,0 +1,30 @@
+let usernames = [];
+let passwords = [];
+
+for (let i = 0; i < 5; i++) {
+
+    let un = prompt("Enter username for user " + (i + 1));
+    usernames.push(un);
+
+    let p = prompt("Enter password for user " + (i + 1));
+    passwords.push(p);
+}
+
+let username = prompt("Enter your username");
+let password = prompt("Enter your password");
+
+let loginSuccessful = false;
+
+for (let i = 0; i < 5; i++) {
+
+    if (username == usernames[i] && password == passwords[i]) {
+
+        console.log("Login successful");
+        loginSuccessful = true;
+        break;
+    }
+}
+
+if (!loginSuccessful) {
+    console.log("Invalid username or password");
+}
