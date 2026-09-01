@@ -1,0 +1,48 @@
+let expense = [];
+let amount = [];
+
+for (let i = 0; i < 5; i++) {
+
+    let e = prompt("Enter the expense");
+    expense.push(e);
+
+    let a = Number(prompt("Enter the amount"));
+    amount.push(a);
+}
+
+let totalSum = 0;
+let max = amount[0];
+let min = amount[0];
+
+for (let i = 0; i < amount.length; i++) {
+
+    totalSum += amount[i];
+
+    if (amount[i] > max) {
+        max = amount[i];
+    }
+
+    if (amount[i] < min) {
+        min = amount[i];
+    }
+}
+
+let average = totalSum / amount.length;
+
+console.log("Total expense:", totalSum);
+console.log("Highest expense:", max);
+console.log("Lowest expense:", min);
+console.log("Average expense:", average);
+
+for (let i = 0; i < amount.length; i++) {
+
+    if (amount[i] == max) {
+        console.log("Highest expense:", expense[i]);
+        console.log("Amount:", amount[i]);
+    }
+
+    if (amount[i] == min) {
+        console.log("Lowest expense:", expense[i]);
+        console.log("Amount:", amount[i]);
+    }
+}
