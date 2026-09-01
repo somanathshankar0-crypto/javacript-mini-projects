@@ -1,0 +1,52 @@
+let marks = [];
+let names = [];
+
+for (let i = 0; i < 5; i++) {
+
+    let m = Number(prompt("Enter the marks"));
+    let n = prompt("Enter the name");
+
+    marks.push(m);
+    names.push(n);
+}
+
+let highest = marks[0];
+let lowest = marks[0];
+
+let nameh = 0;
+let namel = 0;
+
+let total = 0;
+
+for (let i = 0; i < marks.length; i++) {
+
+    if (marks[i] > highest) {
+        highest = marks[i];
+        nameh = i;
+    }
+
+    if (marks[i] < lowest) {
+        lowest = marks[i];
+        namel = i;
+    }
+
+    total += marks[i];
+}
+
+let average = total / marks.length;
+
+console.log(
+    "The name of highest student is",
+    names[nameh],
+    "and the score is",
+    highest
+);
+
+console.log(
+    "The name of student with lowest marks is",
+    names[namel],
+    "and the score is",
+    lowest
+);
+
+console.log("The average is", average);
