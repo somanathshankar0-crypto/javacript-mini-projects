@@ -1,0 +1,48 @@
+let numbers = [];
+
+for (let i = 0; i < 5; i++) {
+    let n = Number(prompt("Enter number"));
+    numbers.push(n);
+}
+
+let sum = 0;
+let max = numbers[0];
+let min = numbers[0];
+let even = 0;
+let odd = 0;
+
+for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+
+    if (numbers[i] > max) {
+        max = numbers[i];
+    }
+
+    if (numbers[i] < min) {
+        min = numbers[i];
+    }
+
+    if (numbers[i] % 2 == 0) {
+        even++;
+    } else {
+        odd++;
+    }
+}
+
+let average = sum / numbers.length;
+
+console.log("Sum is", sum);
+console.log("Average is", average);
+console.log("Maximum number is", max);
+console.log("Minimum number is", min);
+
+console.log("Even numbers:", even);
+console.log("Odd numbers:", odd);
+
+if (even > odd) {
+    console.log("Count of even numbers is high");
+} else if (odd > even) {
+    console.log("Count of odd numbers is high");
+} else {
+    console.log("Even and odd counts are equal");
+}
